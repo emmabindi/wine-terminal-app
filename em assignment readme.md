@@ -21,18 +21,30 @@ The user will then interact with the application by inputting their selections u
 
 ## *Features*
 
-1. Age Filter. The application will utilise logic to provide control flow based on the condition of the user being under or of a legal drinking age in Australia. This feature should allow a retry attempt if user inputs data other than an integer.
+**1. Age Filter**  
 
-2. Budget Filter. The application will provide a selection of budget ranges for the user to choose from. This filter will then only suggest wine bottles to purchase if they fall within the user's budget. If user input does not match the budget options presented, an notification will present to let the user know they need to start the selection process from the beginning. And/or TTY-prompt gem will be utilised to ensure user can only select from the available options and no input errors occur.
+The application will utilise logic to provide control flow based on the condition of the user being under or of a legal drinking age in Australia. This feature should allow a retry attempt if user inputs data other than an integer.
 
-3. Wine Preference. The application will take input from the user on which wine category they would like to select from. The application will present a list of categories available to choose from: Sparkling, White, Rose, Orange, Red and Surprise and following on from the user's choice of one of these categories will then present wine bottles available which fall into this category only.   
-If user input does not match the categories  presented, an notification will present to let the user know they need to start the selection process from the beginning. And/or TTY-prompt gem will be utilised to ensure user can only select from the available options and no input errors occur.
+**2. Budget Filter**  
 
-4. Wine Suggestion List. Following on from obtaining the user's inputs of age, budget and preference, the application will then provide a list for the user to view of the suitable wine offerings available with additional information such as producers name, the country of origin, region, grape variety and sale price. The suggestion list will be colored in blue so it stands out.
+The application will provide a selection of budget ranges for the user to choose from. This filter will then only suggest wine bottles to purchase if they fall within the user's budget. If user input does not match the budget options presented, an notification will present to let the user know they need to start the selection process from the beginning. And/or TTY-prompt gem will be utilised to ensure user can only select from the available options and no input errors occur.
 
-5. Wine Selection. The application will then accept a decision from the user to choose a particular bottle from the suggested list. It will also allow the user to reject the offered wines and re-start the selection process if user changes their mind or are unhappy with the suggestion. 
+**3. Wine Preference**  
 
-6. Wine Sales Log. The application will have an in built function to output the user selections to a csv file which will record the wines selected and sales price. This output will continuously add the user selections and create a log of sales.  
+The application will take input from the user on which wine category they would like to select from. The application will present a list of categories available to choose from: Sparkling, White, Rose, Orange, Red and Surprise and following on from the user's choice of one of these categories will then present wine bottles available which fall into this category only.   
+If user input does not match the categories  presented, an notification will present to let the user know they need to start the selection process from the beginning. And/or TTY-prompt gem will be utilised to ensure user can only select from the available options and no input errors occur.   
+
+**4.  Wine Suggestion List**  
+
+Following on from obtaining the user's inputs of age, budget and preference, the application will then provide a list for the user to view of the suitable wine offerings available with additional information such as producers name, the country of origin, region, grape variety and sale price. The suggestion list will be colored in blue so it stands out.
+
+**5. Wine Selection**  
+
+The application will then accept a decision from the user to choose a particular bottle from the suggested list. It will also allow the user to reject the offered wines and re-start the selection process if user changes their mind or are unhappy with the suggestion. 
+
+**6. Wine Sales Log**  
+
+The application will have an in built function to output the user selections to a csv file which will record the wines selected and sales price. This output will continuously add the user selections and create a log of sales.  
 
 
 --- 
@@ -51,8 +63,8 @@ Using the TTY-prompt gem will reduce the likelihood of user input created errors
 
 ### Control Flow Diagram
 
-![Emma's_Control_Flow_Diagram_Terminal_App](https://www.lucidchart.com/documents/edit/34498ea0-da9c-49ab-8f78-f09da296a6f8/OdhJVqF-g3cm?beaconFlowId=299422ED2D24C98A
-https://pdf-service-lucidchart-com.s3.amazonaws.com/88ca132d-8a27-495c-b361-8437de616185?X-Amz-Security-Token=IQoJb3JpZ2luX2VjECMaCXVzLWVhc3QtMSJHMEUCIQD3DNoX5LUEMaIqA79M%2BoDx8uVCOAE0QE6ztdDA2OjSHwIgCeR3xzl2DBLI4WW3y8SKEg8JFpX6Yb79U1cWmDeckd8qvQMI%2FP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw5MzU2MDY5MjYxODIiDMl5t%2Fd8nfp7UUvDoiqRAyzk%2FqvuGLvtyyjwau%2FHaWScurK%2BS6jGBxAfzP%2Bf7Aj5gcqH2%2FdqPil%2F5Oozx90DeowygBiicm4DrkSGmRjV0JQT4bKRjpMle5%2F9ryd15dz3ugrYA4ZlxD7R6wnJuv8d1GpVTzLjeVgYTcaRJ%2B7J6PIQkQZ%2F7T0zsRMLMfZaJY3%2Bh28109CQZkBRnqHAC%2Bu3n2pKNvbWbupuzw8GrhRVslUjDLhNmrTndWfE9piU9HAsPjviWnJu7C%2B4ZBitH59lPp6qyXYEw9%2BTY%2F%2F7RhfQgQ83Nj3gIH%2BiXM1Yn4W4CAm7kkBIQyPznEQwaGVLk6zQnapzwjDlbx2U3d3wtB%2Bpd2Fw5gdgE1JgfL%2F10vQ%2FIoVjvQNB8KtIjpk00mlzSK1Bkiac2wDFNMZA3TFZYOeu3fRWoXS9KJ5GbWWkIKhvIdFRf0q%2By7F9ZlX00hAF81Rb6VxF6uYSUSbh1sxHfPz018TVhHDl6MPedv3N6EMBP%2Fj8K1bW%2BkJkG2blS8daGv8HluaKkQtXVXFNCHYob4WyMI6gMLWpofMFOusBWHNIr1aC8u3NLeFy816cHcDfz2z6ZEOnFQU8E6VEzLvyQX6bfmUXUBlsPDUWnlEvl8pcdzEnULrluo2gKNFw1I2jKdmjTflhwBtSRK0fsejCkAF1ZaVbKupKurKy6YW40FW8OjaVFvthUdFStaiFBy3ptw%2BPww6UwTwtYZT7A6cg5os7%2FdYL3T88iiOkZnd%2FqYk63qMPqPc4cNMCsC1NE9xFmKuwh0mMJ57G4WmkRh8snKg045lva%2BjG%2B%2FUUaxjp2DE8ZNCuH8XmXJwjF1gxq5zREkcmcTvilehds786tcgfVpEXfDQw9jW5xw%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20200311T035444Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=ASIA5TVUEXNTGSMUGKVH%2F20200311%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=667d69320d18d521a147fc08a1f5d07fb4107ad9c649dcaf113436e6b70fdaa3)
+
+![Control Flow Diagram - Wine Selection App](Wine_Selection_App_Activity_Diagram.png "Control Flow Diagram")
 
 --- 
 

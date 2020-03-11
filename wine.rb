@@ -57,41 +57,29 @@ begin
 
   # p  user_wine_selection #this line prints out the new array of filtered wines
 
-puts ""
-puts "Now that we've confirmed your price range. 
-Please confirm your preference for wine today..
-Sparkling, White, Rose, Orange, Red or Surprise"
+  type_selected = prompt.select("Now that we've confirmed your price range. Please confirm your preference for wine today:
+    ", 
+    %w(Sparkling White Rose Orange Red Surprise))
 
 puts ""
-type_selected = gets.chomp.capitalize!
-puts ""
 
-user_wine_selection_budget_filtered = user_wine_selection.select do | wine | 
+final_selection = user_wine_selection.select do | wine | 
   type_selected == wine.type
 end
 
-puts "This is the wine I will suggest today based on your budget and type preference:"
+puts "This is the wine I will suggest today based on your budget and preferences: 
 
-p user_wine_selection_budget_filtered
+#{final_selection[0].name} by #{final_selection[0].producer} which retails for #{final_selection[0].sale_price}. 
 
-
-
-
-
+This wine is from #{final_selection[0].region} in #{final_selection[0].country_of_origin} and is made from #{final_selection[0].grape_variety} grapes.
+" 
 
 
 
+#The below code is me attempting to list the wine selected into a sales file recording prices
 
+# CSV.open("Wine-Sales.csv", "a") do |csv|
+#   csv << final_selection(@name, @sale_price)
+# end 
 
-
-
-# def which_type
-#   if @type.include? "Orange"
-#     puts "You chose Orange"
-#   else
-#   end
-# end
-
-# which_type
-
-
+# p csv.to_a.last

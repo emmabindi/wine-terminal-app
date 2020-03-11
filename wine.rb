@@ -20,12 +20,12 @@ end
 begin
 
 begin 
-  
-
   a = Artii::Base.new :font => 'digital'
   puts a.asciify('Hello').colorize(:light_blue)
 
-  puts "... and welcome to Em's Wine Selection Assistant"
+  puts "
+  ... and welcome to Em's Wine Selection Assistant
+  "
   puts "Please input your age in years"
 
   age = gets.chomp
@@ -94,7 +94,10 @@ satisfied = prompt.select("Would you like to accept this suggestion or review th
     retry 
   else
     #The below code is me attempting to list the wine selected into a sales file recording prices
-   
+    puts "
+    Thank you - enjoy your bottle of vino!
+    "
+
     CSV.open("./Wine-Sales.csv", "a") do |csv|
       csv << [[final_selection[0].name], [final_selection[0].sale_price]]
     end 

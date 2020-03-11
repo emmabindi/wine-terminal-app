@@ -27,13 +27,19 @@ begin
     exit
   elsif age >= 18 
     puts "Thanks, let's continue"
+    puts ""
   end
   rescue 
     puts "Sorry, that didn't work, please enter your age in years using numbers only"
     retry
 end
 
-budget = prompt.select("Please confirm your budget for this wine selection:", %w(Budget Mid-Range Premium))
+budget = prompt.select("Please confirm your budget for this wine selection:
+  
+  Budget >$25 | Mid-Range: $25-$50 |  Premium: >$50  
+  
+  ", 
+  %w(Budget Mid-Range Premium))
 
 begin
 
@@ -43,18 +49,18 @@ begin
       retry
   end
  
-  # the below code begins to filter the wine selected by the user into a new array which will then be displayed to them. First filter is budget and then type
+  # the below code begins to filter the wine selected by the user into a new array which will then be displayed to them. First filter is budget and then it moves onto type
 
   user_wine_selection = wine_list.select do |wine|
     budget == wine.budget
   end
 
-  # pp  user_wine_selection #this line prints out the new array of filtered wines
+  # p  user_wine_selection #this line prints out the new array of filtered wines
 
 puts ""
 puts "Now that we've confirmed your price range. 
 Please confirm your preference for wine today..
-Sparkling, White, Rose, Orange or Red"
+Sparkling, White, Rose, Orange, Red or Surprise"
 
 puts ""
 type_selected = gets.chomp.capitalize!
@@ -65,6 +71,7 @@ user_wine_selection_budget_filtered = user_wine_selection.select do | wine |
 end
 
 puts "This is the wine I will suggest today based on your budget and type preference:"
+
 p user_wine_selection_budget_filtered
 
 

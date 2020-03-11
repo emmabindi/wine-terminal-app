@@ -98,6 +98,10 @@ satisfied = prompt.select("Would you like to accept this suggestion or review th
     Thank you - enjoy your bottle of vino!
     "
 
+    cheers = Artii::Base.new :font => 'digital'
+    puts cheers.asciify('Cheers!  Salute!  Prost!').colorize(:light_blue)
+    puts ""
+
     CSV.open("./Wine-Sales.csv", "a") do |csv|
       csv << [[final_selection[0].name], [final_selection[0].sale_price]]
     end 

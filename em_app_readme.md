@@ -56,7 +56,7 @@ The user will interact with this application by running the ruby program from th
 
 These prompts and messages will direct and guide the user through the application so that the features are accessed/utilised. 
 
-Using the TTY-prompt gem will reduce the likelihood of user input created errors by limiting and controlling user inputs to selections from a pre-defined menu only. The use of the gem TTY prompt allowed me to remove the manual error handling code such as converting strings to integers, capitalising input to match menu options etc. 
+Using the TTY-prompt gem will reduce the likelihood of user input created errors by limiting and controlling user inputs to selections from a pre-defined menu only. 
 
 ---   
 
@@ -74,7 +74,6 @@ For this application I utilised Trello project management software.
 The link to access my Trello board "FastTrack Terminal" is below:
 
 https://trello.com/invite/b/rYZ1aRYW/8158415533b26771d5aca5b295ca5421/fasttrack-terminal 
-
 
 *The general / overarching priority ranking that I followed was:*
 
@@ -118,16 +117,3 @@ Low Priority / Final Tasks
 
 
 ### How to use the application
-
-To run this wine selection assistant:
-
-1. open the terminal window on your computer.
-2. enter "ruby wine.rb" into your terminal 
-3. from this point, a welcome message will appear and the application will begin to guide you through the selection process
-4. follow the prompts and enter your age in years (full numbers only ie. 27 if you are 27 years old)
-5. if you are over 18 years old, a menu will appear offering you budget levels to choose from. Use the arrow up and down keys on your keyboard to make your selection and then press enter
-6. another menu and message will appear offering you the choice of which type of wine you would like suggested to you. Use the up and down arrow keys to make your selection and then press enter. If you would like the computer to 'surprise' you choose "surprise" instead.
-7. the application will then display a wine to you within the parameters you had chosen in prior steps. Review this wine recommendation. 
-8. another menu will appear, using the up and down arrow keys, select whether you are happy with the suggested wine or if you would like to restart the process. If you would like to restart the above steps will be carried out again.
-9.  Once you select 'happy with the choice', a goodbye message will be received and the application will record the wine sale in an external csv file. 
-

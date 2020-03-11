@@ -1,4 +1,6 @@
-### link to source code repository
+### Link to Source Code Repository:
+
+#### https://github.com/emmabindi/wine-terminal-app.git
 
 --- 
 

@@ -9,8 +9,6 @@ require 'rubocop'
 
 prompt = TTY::Prompt.new
 
-rubocop
-
 csv_text = File.read('Wine-List-March2020.csv')
 csv = CSV.parse(csv_text, headers: true)
 wine_list = []
@@ -108,7 +106,9 @@ else
   puts ''
 
   CSV.open('./Wine-Sales.csv', 'a') do |csv|
-    csv << [[final_selection[0].name], [final_selection[0].sale_price]]
+    csv << [final_selection[0].name, final_selection[0].sale_price]
+    puts final_selection[0].name
   end
   exit
   end
+

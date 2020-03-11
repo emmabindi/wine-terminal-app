@@ -90,7 +90,7 @@ satisfied = prompt.select("Would you like to accept this suggestion or review th
   else
     #The below code is me attempting to list the wine selected into a sales file recording prices
    
-    CSV.open("./Wine-Sales.csv", "wb") do |csv|
+    CSV.open("./Wine-Sales.csv", "a") do |csv|
       csv << [[final_selection[0].name], [final_selection[0].sale_price]]
     end 
     exit

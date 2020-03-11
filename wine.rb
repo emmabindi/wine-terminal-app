@@ -4,59 +4,52 @@ require 'csv'
 
 prompt = TTY::Prompt.new
 
-puts "Hello and welcome to Em's Wine Selection Assistant"
-puts "Please input your age in years"
+csv_text = File.read('Wine-List-March2020.csv')
+csv = CSV.parse(csv_text, :headers => true)
+wine_list = []
+csv.each do |row|
+  row_data = row.to_hash
+  wine_list.push(Wine.new(row_data["Type"], row_data["Name"], row_data["Budget"], row_data["Sale_Price"], row_data["Producer"], row_data["Country_of_Origin"], row_data["Grape_Variety"], row_data["Region"]))
+end
 
-age = gets.chomp.to_i
+#The below code is to collect the user's age and verify that they are over 18 years old and legally allowed to consume alcohol (within Australia)
+  
+begin 
+  
+  puts "Hello and welcome to Em's Wine Selection Assistant"
+  puts "Please input your age in years"
 
-if age < 18 
-  puts "Sorry, you need to be over 18 to use this application"
-  exit
-else 
- puts "Thanks, let's continue"
-
-
-
-#  Asking question with list of options couldn't be easier using select like so:
-
-# prompt.select("Choose your destiny?", %w(Scorpion Kano Jax))# =>
-# # Choose your destiny? (Use ↑/↓ arrow keys, press Enter to select)
-# # ‣ Scorpion
-# #   Kano
-# #   Jax
-
+  age = gets.chomp
+  age = Integer(age)
+  
+  if age < 18 
+    puts "Sorry, you need to be over 18 to use this application"
+    exit
+  elsif age >= 18 
+    puts "Thanks, let's continue"
+  end
+  rescue 
+    puts "Sorry, that didn't work, please enter your age in years using numbers only"
+    retry
+end
 
 budget = prompt.select("Please confirm your budget for this wine selection:", %w(Budget Mid-Range Premium))
 
- begin
-#   puts "Please confirm your budget for this wine selection:
-#   1. Budget (<$25)
-#   2. Mid-Range ($25 - $50)
-#   3. Premium (>$50)"
-
-  # budget = gets.chomp.to_i
+begin
 
   raise "invalid input" if budget != "Budget" && budget != "Mid-Range" && budget != "Premium"
   rescue RuntimeError
       puts "Sorry, that didn't work, please chose either Budget, Mid-Range or Premium from the list of options"
       retry
   end
-end
-#  case budget 
+ 
+  # the below code begins to filter the wine selected by the user into a new array which will then be displayed to them. First filter is budget and then type
 
-#  when 1 
-#   budget == Budget
-#   puts "No problems. We can find something budget for you."
-#  when 2
-#   budget == Mid-Range
-#   puts "No problems, you're looking for a mid-range bottle"
-#  when 3
-#   budget == Premium
-#   puts "Ooh you're fancy"
-#  else 
-#   puts "Sorry, that input wasn't correct, please try again and enter 1, 2 or 3"
-#  end
+  user_wine_selection = wine_list.select do |wine|
+    budget == wine.budget
+  end
 
+  # pp  user_wine_selection #this line prints out the new array of filtered wines
 
 puts ""
 puts "Now that we've confirmed your price range. 
@@ -64,8 +57,26 @@ Please confirm your preference for wine today..
 Sparkling, White, Rose, Orange or Red"
 
 puts ""
-type_selection = gets.chomp.capitalize!
+type_selected = gets.chomp.capitalize!
 puts ""
+
+user_wine_selection_budget_filtered = user_wine_selection.select do | wine | 
+  type_selected == wine.type
+end
+
+puts "This is the wine I will suggest today based on your budget and type preference:"
+p user_wine_selection_budget_filtered
+
+
+
+
+
+
+
+
+
+
+
 
 # def which_type
 #   if @type.include? "Orange"
@@ -77,15 +88,3 @@ puts ""
 # which_type
 
 
-csv_text = File.read('Wine-List-March2020.csv')
-csv = CSV.parse(csv_text, :headers => true)
-# wine_selected = []
-csv.each do |row|
-  row_data = row.to_hash
-  if (row_data['Type'] == type_selection) && (row_data['Budget'] == budget)
-    puts row_data
-    # wine_selected << row_data
-  end 
-end
-
-puts csv

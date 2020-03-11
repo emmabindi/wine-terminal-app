@@ -109,20 +109,3 @@ satisfied = prompt.select("Would you like to accept this suggestion or review th
   end
 
   rubocop -a
- 
-    # csv_sales = File.read('Wine-Sales.csv')
-    # csv = CSV.parse(csv_sales, :headers => true)
-    # wine_sales = []
-
-   # p csv.to_a.last
-    
-    
-    
-    # csv_sales = File.read('Wine-Sales.csv')
-    # csv = CSV.parse(csv_sales, :headers => true)
-    # wine_sales = []
-    # csv.each do |row|
-    #   row_data = row.to_hash
-    #   # wine_sales.push([final_selection[0].name], ([final_selection[0].sale_price]))
-    #   wine_sales.push(row_data["Name", row_data["Sale_Price"]])
-    # end

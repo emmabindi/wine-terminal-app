@@ -2,6 +2,7 @@ require_relative "wine_classes"
 require 'tty-prompt'
 require 'csv'
 require 'colorize'
+require 'artii'
 require 'rubocop'
 
 prompt = TTY::Prompt.new
@@ -20,7 +21,11 @@ begin
 
 begin 
   
-  puts "Hello and welcome to Em's Wine Selection Assistant"
+
+  a = Artii::Base.new :font => 'digital'
+  puts a.asciify('Hello').colorize(:light_blue)
+
+  puts "... and welcome to Em's Wine Selection Assistant"
   puts "Please input your age in years"
 
   age = gets.chomp

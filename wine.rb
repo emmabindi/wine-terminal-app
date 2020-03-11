@@ -2,7 +2,7 @@ require_relative "wine_classes"
 require 'tty-prompt'
 require 'csv'
 require 'colorize'
-require 'artii'
+require 'rubocop'
 
 prompt = TTY::Prompt.new
 
@@ -95,6 +95,8 @@ satisfied = prompt.select("Would you like to accept this suggestion or review th
     end 
     exit
   end
+
+  rubocop -a
  
     # csv_sales = File.read('Wine-Sales.csv')
     # csv = CSV.parse(csv_sales, :headers => true)

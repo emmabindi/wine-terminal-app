@@ -88,13 +88,27 @@ satisfied = prompt.select("Would you like to accept this suggestion or review th
   rescue
     retry 
   else
+    #The below code is me attempting to list the wine selected into a sales file recording prices
+   
+    CSV.open("./Wine-Sales.csv", "wb") do |csv|
+      csv << [[final_selection[0].name], [final_selection[0].sale_price]]
+    end 
     exit
   end
+ 
+    # csv_sales = File.read('Wine-Sales.csv')
+    # csv = CSV.parse(csv_sales, :headers => true)
+    # wine_sales = []
 
-#The below code is me attempting to list the wine selected into a sales file recording prices
-
-# CSV.open("Wine-Sales.csv", "a") do |csv|
-#   csv << final_selection(@name, @sale_price)
-# end 
-
-# p csv.to_a.last
+   # p csv.to_a.last
+    
+    
+    
+    # csv_sales = File.read('Wine-Sales.csv')
+    # csv = CSV.parse(csv_sales, :headers => true)
+    # wine_sales = []
+    # csv.each do |row|
+    #   row_data = row.to_hash
+    #   # wine_sales.push([final_selection[0].name], ([final_selection[0].sale_price]))
+    #   wine_sales.push(row_data["Name", row_data["Sale_Price"]])
+    # end

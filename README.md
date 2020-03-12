@@ -150,12 +150,15 @@ rbenv install 2.7.0
 
 *(For non-Mac users, please Google for 'how-to' instructions or preferably utilise a virtual machine)*
 
-**2. Install gem**
+**2. Install gems**
 
 Run the following command in terminal: 
 
 ```
-gem install wine-terminal-app
+gem install colorize
+gem install artii
+gem install tty-prompt
+gem install terminal-table
 ```
 
 **3. Type irb into terminal**
@@ -164,10 +167,10 @@ gem install wine-terminal-app
 irb 
 ```
 
-**4. Require the gem in terminal and run** 
+**4. Run the ruby file** 
 
 ``` 
-require 'wine-terminal-app'
+ruby wine.rb
 ```
 
 --- 
@@ -179,6 +182,7 @@ This application has the below dependencies which are already within the gem fil
 - colorize 
 - TTY-prompt 
 - artii 
+- terminal-table
 - rubocop
 
 

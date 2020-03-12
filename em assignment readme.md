@@ -110,11 +110,25 @@ Low Priority / Final Tasks
 
 ### Installation Instructions
 
+1. Install ruby 
+
+
+2. Install gem 
+
+gem install wine-terminal-app
+
+3. Type irb into terminal 
+
+4. Require the gem in terminal and run 
+
 
 ### Dependencies 
 
 
+
 ### System/Hardware Requirements
+
+
 
 
 ### How to use the application

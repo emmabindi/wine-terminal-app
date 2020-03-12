@@ -43,6 +43,8 @@ begin
       puts "Sorry, that didn't work, please enter your age in years using numbers only"
       retry
     end
+  
+    # the below code is to collect the users budget selection 
 
     budget = prompt.select("Please confirm your budget for this wine selection:
 
@@ -107,7 +109,6 @@ else
 
   CSV.open('./Wine-Sales.csv', 'a') do |csv|
     csv << [final_selection[0].name, final_selection[0].sale_price]
-    puts final_selection[0].name
   end
   exit
   end

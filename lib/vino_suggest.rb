@@ -1,3 +1,8 @@
+require "vino_suggest/version"
+
+module VinoSuggest
+  class Error < StandardError; end
+
 require_relative 'wine_classes'
 require 'tty-prompt'
 require 'csv'
@@ -120,3 +125,4 @@ else
   save_purchase_details(final_selection)
   exit
   end
+end

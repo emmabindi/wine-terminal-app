@@ -1,3 +1,5 @@
+# VinoSuggest
+
 ### Link to Source Code Repository:
 
  https://github.com/emmabindi/wine-terminal-app.git
@@ -208,3 +210,17 @@ To run this wine selection assistant:
 8. another menu will appear, using the up and down arrow keys, select whether you are happy with the suggested wine or if you would like to restart the process. If you would like to restart the above steps will be carried out again.
 9.  Once you select 'happy with the choice', a goodbye message will be received and the application will record the wine sale in an external csv file. 
 10. Enjoy!
+
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/vino_suggest. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/vino_suggest/blob/master/CODE_OF_CONDUCT.md).
+
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the VinoSuggest project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/vino_suggest/blob/master/CODE_OF_CONDUCT.md).

@@ -1,7 +1,7 @@
 require "vino_suggest/version"
 
-module VinoSuggest
-  class Error < StandardError; end
+# module VinoSuggest
+#   class Error < StandardError; end
 
 require_relative 'wine_classes'
 require 'tty-prompt'
@@ -125,4 +125,4 @@ else
   save_purchase_details(final_selection)
   exit
   end
-end
+# end

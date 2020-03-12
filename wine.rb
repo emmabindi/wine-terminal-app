@@ -1,11 +1,8 @@
-# frozen_string_literal: true
-
 require_relative 'wine_classes'
 require 'tty-prompt'
 require 'csv'
 require 'colorize'
 require 'artii'
-# require 'rubocop'
 
 def save_purchase_details(final_selection)
   CSV.open('./Wine-Sales.csv', 'a') do |csv|
@@ -44,6 +41,9 @@ begin
 
       if age < 18
         puts 'Sorry, you need to be over 18 to use this application'
+        exit
+      elsif age >=110
+        puts 'Sorry, I appreciate your interest, but maybe considering your elderly age it would be best if you avoid alcohol in the best interests of your health'
         exit
       elsif age >= 18
         puts "Thanks, let's continue"
@@ -114,8 +114,8 @@ else
     "
 
   print_heading('Cheers!  Salute!  Prost!')
-  puts ''
-
+  puts ""
+ 
   save_purchase_details(final_selection)
   exit
   end

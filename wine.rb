@@ -5,7 +5,18 @@ require 'tty-prompt'
 require 'csv'
 require 'colorize'
 require 'artii'
-require 'rubocop'
+# require 'rubocop'
+
+def save_purchase_details(final_selection)
+  CSV.open('./Wine-Sales.csv', 'a') do |csv|
+    csv << [[final_selection[0].name, final_selection[0].sale_price]]
+  end
+end
+
+def print_heading(message)
+  a = Artii::Base.new font: 'digital'
+  puts a.asciify(message).colorize(:light_blue)
+end
 
 prompt = TTY::Prompt.new
 
@@ -21,8 +32,7 @@ end
 
 begin
     begin
-      a = Artii::Base.new font: 'digital'
-      puts a.asciify('Hello').colorize(:light_blue)
+      print_heading('Hello')
 
       puts "
   ... and welcome to Em's Wine Selection Assistant
@@ -103,12 +113,9 @@ else
     Thank you - enjoy your bottle of vino!
     "
 
-  cheers = Artii::Base.new font: 'digital'
-  puts cheers.asciify('Cheers!  Salute!  Prost!').colorize(:light_blue)
+  print_heading('Cheers!  Salute!  Prost!')
   puts ''
 
-  CSV.open('./Wine-Sales.csv', 'a') do |csv|
-    csv << [[final_selection[0].name, final_selection[0].sale_price]]
-  end
+  save_purchase_details(final_selection)
   exit
   end

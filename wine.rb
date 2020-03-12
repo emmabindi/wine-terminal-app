@@ -108,8 +108,7 @@ else
   puts ''
 
   CSV.open('./Wine-Sales.csv', 'a') do |csv|
-    csv << [final_selection[0].name, final_selection[0].sale_price]
+    csv << [[final_selection[0].name, final_selection[0].sale_price]]
   end
   exit
   end
-
